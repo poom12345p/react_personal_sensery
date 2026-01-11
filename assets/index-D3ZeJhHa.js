@@ -1,4 +1,4 @@
-import{j as r,d as l,r as n}from"./index-C8_9Vxy0.js";const c=({src:e,width:t,height:o})=>r.jsx("img",{src:`./react_personal_sensery/img/svg/${e}`,alt:e,width:t,height:o}),a=l("div")`
+import{j as r,d as l,r as n}from"./index-DxqLgpuX.js";const c=({src:e,width:t,height:o})=>r.jsx("img",{src:`./react_personal_sensery/img/svg/${e}`,alt:e,width:t,height:o}),a=l("div")`
   padding: 10px;
   position: fixed;
   right: 30px;

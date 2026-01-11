@@ -1,0 +1,14 @@
+{
+  "title": "Development of Thai Sensory Patterns Assessment Tool",
+  "text": "เลือกช่วงอายุของคุณ!",
+  "button": [
+    {
+      "title": "3-12",
+      "link": "/assessment_3_12"
+    },
+    {
+      "title": "13+",
+      "link": "/"
+    }
+  ]
+}

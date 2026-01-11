@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ScrollUpContainer = styled("div")<{
-  display: boolean;
+  $display: boolean;
 }>`
   padding: 10px;
   position: fixed;
@@ -14,8 +14,8 @@ export const ScrollUpContainer = styled("div")<{
   align-items: center;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
-  visibility: ${(p) => (p.display ? "visible" : "hidden")};
-  opacity: ${(p) => (p.display ? "1" : "0")};
+  visibility: ${($display) => ($display ? "visible" : "hidden")};
+  opacity: ${($display) => ($display? "1" : "0")};
   display: flex;
 
   &:hover,

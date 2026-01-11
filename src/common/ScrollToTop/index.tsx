@@ -33,7 +33,7 @@ const ScrollToTop = () => {
 
   return (
     <ScrollUpContainer  $display={showScroll} onClick={scrollUp}>
-      <SvgIcon src="/react_personal_sensery/scroll-top.svg" width="20px" height="20px" />
+      <SvgIcon src="scroll-top.svg" width="20px" height="20px" />
     </ScrollUpContainer>
   );
 };

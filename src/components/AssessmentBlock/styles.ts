@@ -42,7 +42,7 @@ export const ServiceWrapper = styled("div")`
 
 export const HeadderTitle = styled("h1")`
   font-size: clamp(24px, 4vw, 40px);
-  line-height: 1rem;
+  line-height: 1.5rem;
   padding: 0.5rem 0;
   text-transform: uppercase;
   color: #3c0058;
@@ -102,11 +102,12 @@ export const AssessmentCard = styled(Card)`
   }
 `;
 
-export const PurpleRadioGroup = styled(Radio.Button)`
-  block
+export const PurpleRadioButton = styled(Radio.Button)`
+
   background: #f5f3ff;
   border-color: #4c13a8;
   color: #4c13a8;
+
 
   &:hover {
     color: #4c13a8;
@@ -116,5 +117,27 @@ export const PurpleRadioGroup = styled(Radio.Button)`
     background: #4c13a8 !important;
     border-color: #4c13a8 !important;
     color: #ffffff !important;
+  }
+
+`;
+
+export const PurpleRadioGroup = styled(Radio.Group)`
+  optionType : button
+  buttonStyle : solid
+  background: #f5f3ff;
+  border-color: #4c13a8;
+   display: flex;
+  width: 100%;
+  .ant-radio-button-wrapper {
+    flex: 1;  
+    text-align: center;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    .ant-radio-button-wrapper {
+      width: 100%;
+    }
   }
 `;

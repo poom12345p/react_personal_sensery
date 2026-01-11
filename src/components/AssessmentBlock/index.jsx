@@ -12,7 +12,8 @@ import {
   MainTitle,
   SubTitle,
   AssessmentCard,
-  PurpleRadioGroup,
+  PurpleRadioButton,
+  PurpleRadioGroup
 } from "./styles";
 
 const scrollTo = (id) => {
@@ -24,15 +25,14 @@ const scrollTo = (id) => {
 
 const LikertRadio = ({ value,scaleReversed, onChange }) => (
 
-  <Radio.Group block optionType="button"
-    buttonStyle="solid"
+  <PurpleRadioGroup
     value={value}
     onChange={(e) => onChange(e.target.value)}
   >
     {(scaleReversed === true ? Choices.low : Choices.high).map((v) => (
-      <PurpleRadioGroup key={v.text} value={v.value}>{v.text}</PurpleRadioGroup>
+      <PurpleRadioButton key={v.text} value={v.value}>{v.text}</PurpleRadioButton>
     ))}
-  </Radio.Group>
+  </PurpleRadioGroup>
 );
 
 

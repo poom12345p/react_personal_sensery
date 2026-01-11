@@ -1,16 +1,19 @@
 import { createGlobalStyle } from "styled-components";
+import MotivaLight from "../assets/fonts/Motiva-Sans-Light.ttf";
+import MotivaBold from "../assets/fonts/Motiva-Sans-Bold.ttf";
+
 
 export const Styles = createGlobalStyle`
 
     @font-face {
         font-family: "Motiva Sans Light";
-        src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
+        src: url(${MotivaLight})format("truetype");
         font-style: normal;
     }
 
     @font-face {
         font-family: "Motiva Sans Bold";
-        src: url("/fonts/Motiva-Sans-Bold.ttf") format("truetype");
+        src: url(${MotivaBold}) format("truetype");
         font-style: normal;
     }
 

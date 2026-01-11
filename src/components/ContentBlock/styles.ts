@@ -1,5 +1,7 @@
 import { Row } from "antd";
 import styled from "styled-components";
+import "../../assets/fonts/Motiva-Sans-Bold.ttf";
+import "../../assets/fonts/Motiva-Sans-Light.ttf";
 
 export const ContentSection = styled("section")`
   position: relative;

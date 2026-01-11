@@ -9,7 +9,7 @@ import Router from "./router";
 
 
 createRoot(document.getElementById('root')).render(
- <BrowserRouter>
+ <BrowserRouter basename="/react_personal_sensery">
     <Router />
   </BrowserRouter>
 )

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 
 const routes = [
   {
-    path: "/react_personal_sensery",
+    path: "/",
     element: lazy(() => import("../pages/Home"))
   },
   {

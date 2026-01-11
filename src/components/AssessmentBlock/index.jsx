@@ -139,7 +139,7 @@ const AssessmentBlock = ({ survey }) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log("Assessment Result", answers);
-    if (isAllAnswered)
+    if (isAllAnswered(survey,answers))
       navigate("/result",{ state: { survey : survey ,key : survey.id }});
     else
       alert("Please complete all assessment!");

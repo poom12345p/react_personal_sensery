@@ -10,6 +10,11 @@ const routes = [
     element: lazy(() => import("../pages/Assessment_3_12"))
   },
    {
+    path: "/assessment_13",
+    element: lazy(() => import("../pages/Assessment_13"))
+  }
+  ,
+   {
     path: "/result",
     element: lazy(() => import("../pages/Result"))
   },

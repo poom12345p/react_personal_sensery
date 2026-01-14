@@ -15,7 +15,8 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
   const series = dataSeries.map((item) => ({
     label: item.label,
     data: item.data,
-    fillArea: true,        
+    fillArea: true, 
+    color  : item.color,
     areaOpacity: 0.25,
     valueFormatter,
   }));

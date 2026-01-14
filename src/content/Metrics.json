@@ -3,12 +3,14 @@
              "การมองเห็น (Sight)",
              "การได้ยิน (Auditory)",
              "รับกลิ่นและรสชาติ (Olfactory and Gustation)",
+             "ระบบประสาทด้านการรับสัมผัส (Touch System)",
              "การทรงตัว (Vestibular)",
              "ความรู้สึก (Proprioceptive)"
      ],
       "Metricskey": [
              "sight_system",
              "auditory_system",
+             "olfactory_gustation_system",
              "touch_system",
              "vestibular_system",
              "proprioceptive_system"

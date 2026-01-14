@@ -104,8 +104,8 @@ console.log( Metrics.Metricskey);
   const preferenceData = getOrderedData(result, Metrics.Metricskey, "preferences");
   const arousalData    = getOrderedData(result, Metrics.Metricskey, "arousals");
     const series = [
-  { label: "Preferences", data: preferenceData },
-  { label: "Arousals", data: arousalData },
+  { label: "Preferences",color: "#1daf00", data: preferenceData },
+  { label: "Arousals",color: "#b61a1a", data: arousalData },
 ];
     return series;
 };

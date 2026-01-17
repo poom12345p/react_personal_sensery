@@ -23,7 +23,7 @@ const scrollTo = (id) => {
   });
 };
 
-const LikertRadio = ({ value,scaleReversed, onChange }) => (
+const LikertRadio = ({ value, scaleReversed, onChange }) => (
 
   <PurpleRadioGroup
     value={value}
@@ -44,6 +44,23 @@ const LikertRadio = ({ value,scaleReversed, onChange }) => (
 //   );
 
 // }
+
+const QuestionRow = ({ question, savedData, scaleReversed, onChange }) => {
+  console.log(savedData);
+  return (
+    <Card style={{ marginBottom: 16 }}>
+      <Typography.Text strong>
+        {question.text}
+      </Typography.Text>
+
+      <LikertRadio
+        value={savedData?.[question.id]}
+        scaleReversed={scaleReversed}
+        onChange={onChange}
+      />
+    </Card>
+  );
+}
 
 const AssessmentBlock = ({ survey }) => {
 
@@ -86,7 +103,7 @@ const AssessmentBlock = ({ survey }) => {
   };
 
 
-  const columns = (systemId, childId,scaleReversed) => [
+  const columns = (systemId, childId, scaleReversed) => [
     {
       title: "ข้อ",
       dataIndex: "id",
@@ -139,8 +156,8 @@ const AssessmentBlock = ({ survey }) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log("Assessment Result", answers);
-    if (isAllAnswered(survey,answers))
-      navigate("/result",{ state: { survey : survey ,key : survey.id }});
+    if (isAllAnswered(survey, answers))
+      navigate("/result", { state: { survey: survey, key: survey.id } });
     else
       alert("Please complete all assessment!");
   };
@@ -155,19 +172,27 @@ const AssessmentBlock = ({ survey }) => {
           <div key={system.id} className="mb-10">
             < AssessmentCard title={system.title} style={{ marginBottom: 36 }}>
 
-              {system.children.map((child) => (
-                <div key={child.id} className="mb-8">
-                  <SubTitle>{child.title}</SubTitle>
-                  <Table
-                    rowKey="id"
-                    columns={columns(system.id, child.id,child.scaleReversed)}
-                    dataSource={child.questions}
-                    pagination={false}
-                    bordered
-                  />
-                </div>
+              {system.children.map((child) => {
 
-              ))}
+                return (
+                  <div key={child.id} className="mb-8">
+                    <SubTitle>{child.title}</SubTitle>
+
+                    {child.questions.map((q) => {
+
+                      return (
+                        <QuestionRow
+                          key={q.id}
+                          question={q}
+                          savedData={answers?.[system.id]?.[child.id]}
+                          scaleReversed={child.scaleReversed}
+                          onChange={(v) => setAnswer(system.id, child.id, q.id, v)}
+                        />
+                      );
+                    })}
+                  </div>
+                );
+              })}
             </ AssessmentCard>
           </div>
         ))}

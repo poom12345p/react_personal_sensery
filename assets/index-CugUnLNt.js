@@ -1,4 +1,4 @@
-import{d as n,h as m,u as x,j as e,C as h,B as f}from"./index-B0yJaQ40.js";import{F as g}from"./index-DSM3fTff.js";const j=n("section")`
+import{d as n,n as m,o as x,j as e,C as h,B as f}from"./index-Dlf65v-i.js";import{F as g}from"./index-Cs9v0XsC.js";const j=n("section")`
   position: relative;
   padding: 10rem 0 8rem;
 
@@ -44,4 +44,4 @@ import{d as n,h as m,u as x,j as e,C as h,B as f}from"./index-B0yJaQ40.js";impor
   button:last-child {
     margin-left: 20px;
   }
-`,b=({icon:i,title:a,content:o,section:C,button:r,id:d,direction:s})=>{const l=x(),c=t=>{l(t)};return e.jsx(j,{children:e.jsx(g,{direction:s,triggerOnce:!0,children:e.jsx(w,{justify:"center",align:"middle",id:d,direction:s,children:e.jsx(h,{xs:24,sm:24,md:20,lg:16,xl:14,children:e.jsxs(y,{children:[e.jsx("h6",{children:a}),e.jsx(u,{children:o}),e.jsx(v,{children:typeof r=="object"&&r.map((t,p)=>e.jsx(f,{color:t.color,onClick:()=>t.link&&c(t.link),children:t.title},p))})]})})})})})};export{b as default};
+`,b=({icon:i,title:s,content:a,section:C,button:o,id:d,direction:r})=>{const l=x(),c=t=>{l(t)};return e.jsx(j,{children:e.jsx(g,{direction:r,triggerOnce:!0,children:e.jsx(w,{justify:"center",align:"middle",id:d,direction:r,children:e.jsx(h,{xs:24,sm:24,md:20,lg:16,xl:14,children:e.jsxs(y,{children:[e.jsx("h6",{children:s}),e.jsx(u,{children:a}),e.jsx(v,{children:typeof o=="object"&&o.map((t,p)=>e.jsx(f,{color:t.color,onClick:()=>t.link&&c(t.link),children:t.title},p))})]})})})})})};export{b as default};

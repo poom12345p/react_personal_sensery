@@ -25,7 +25,8 @@ const scrollTo = (id) => {
 
 const LikertRadio = ({ value, scaleReversed, onChange }) => (
 
-  <PurpleRadioGroup
+  <PurpleRadioGroup 
+    id ={v.id}
     value={value}
     onChange={(e) => onChange(e.target.value)}
   >
@@ -139,12 +140,14 @@ const AssessmentBlock = ({ survey }) => {
           (q) => {
             var ans = answers?.[assessment.id]?.[child.id]?.[q.id] != null
             if (!ans) {
+              
               console.log(
                 "missing answer at",
                 assessment.id,
                 child.id,
                 q.id
               );
+              scrollTo(q.id);
             }
             return ans;
           }

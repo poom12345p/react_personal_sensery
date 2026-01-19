@@ -26,7 +26,6 @@ const scrollTo = (id) => {
 const LikertRadio = ({ value, scaleReversed, onChange }) => (
 
   <PurpleRadioGroup 
-    id ={v.id}
     value={value}
     onChange={(e) => onChange(e.target.value)}
   >
@@ -49,7 +48,7 @@ const LikertRadio = ({ value, scaleReversed, onChange }) => (
 const QuestionRow = ({ question, savedData, scaleReversed, onChange }) => {
   console.log(savedData);
   return (
-    <Card style={{ marginBottom: 16 }}>
+    <Card id={question.id} style={{ marginBottom: 16 }}>
       <Typography.Text strong>
         {question.text}
       </Typography.Text>

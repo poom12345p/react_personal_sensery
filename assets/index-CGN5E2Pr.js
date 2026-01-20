@@ -1,4 +1,4 @@
-import{d as n,R as m,i as x,j as e,C as h,B as f}from"./index-B-tmiAcq.js";import{F as g}from"./index-CnjOxU7H.js";const j=n("section")`
+import{d as n,R as m,i as x,j as e,C as h,B as f}from"./index-BCzXKltb.js";import{F as g}from"./index-DuyL8lqK.js";const j=n("section")`
   position: relative;
   padding: 10rem 0 8rem;
 

@@ -1,4 +1,4 @@
-import{d as n,R as y,r as m,i as A,j as t,B as x}from"./index-B-tmiAcq.js";import{F as T}from"./index-CnjOxU7H.js";import{R as g,C as h,T as w}from"./index-CDd3FiHO.js";const k=[{text:"ไม่เคย",value:1},{text:"น้อย",value:2},{text:"ปานกลาง",value:3},{text:"บ่อย",value:4},{text:"บ่อยมาก",value:5}],B=[{text:"ไม่เคย",value:5},{text:"น้อย",value:4},{text:"ปานกลาง",value:3},{text:"บ่อย",value:2},{text:"บ่อยมาก",value:1}],f={high:k,low:B},C=n("section")`
+import{d as n,R as y,r as m,i as A,j as t,B as x}from"./index-BCzXKltb.js";import{F as T}from"./index-DuyL8lqK.js";import{R as g,C as h,T as w}from"./index-B1KRLjcb.js";const k=[{text:"ไม่เคย",value:1},{text:"น้อย",value:2},{text:"ปานกลาง",value:3},{text:"บ่อย",value:4},{text:"บ่อยมาก",value:5}],B=[{text:"ไม่เคย",value:5},{text:"น้อย",value:4},{text:"ปานกลาง",value:3},{text:"บ่อย",value:2},{text:"บ่อยมาก",value:1}],f={high:k,low:B},C=n("section")`
   position: relative;
   padding: 10rem 0 8rem;
 

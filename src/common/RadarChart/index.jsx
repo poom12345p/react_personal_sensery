@@ -1,5 +1,7 @@
 import { RadarChart, RadarAxis } from '@mui/x-charts/RadarChart';
 import Box from '@mui/material/Box';
+import { useState } from "react";
+import Chart from "react-apexcharts";
 // Data from https://ourworldindata.org/emissions-by-fuel
 
 function valueFormatter(v) {
@@ -8,6 +10,8 @@ function valueFormatter(v) {
   }
   return `${v.toFixed(2).toLocaleString()}%`;
 }
+
+
 
 export default function MultiSeriesRadar({ dataSeries, metrics }) {
 
@@ -20,6 +24,115 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
     areaOpacity: 0.25,
     valueFormatter,
   }));
+
+  const series2 = dataSeries.map((item) => ({
+    name: item.label,
+    data: item.data,
+    color: item.color,
+  }));
+
+
+  const [state, setState] = useState({
+
+    series: series2,
+    options: {
+      chart: {
+        height: 500,
+        type: 'radar',
+      },
+      responsive: [
+        {
+          breakpoint: 768, // tablet
+          options: {
+            chart: {
+              height: 300,
+            },
+            plotOptions: {
+              radar: {
+                size: 110,
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  fontSize: "12px",
+                },
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 480, // mobile
+          options: {
+            chart: {
+              height: 200,
+            },
+            plotOptions: {
+              radar: {
+                size: 90,
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  fontSize: "10px",
+                },
+              },
+            },
+            dataLabels: {
+              enabled: false, // 👈 mobile clarity
+            },
+          },
+        },
+      ],
+      dataLabels: {
+        enabled: true
+      },
+      plotOptions: {
+        radar: {
+          size: 200,
+          polygons: {
+            strokeColors: '#e9e9e9',
+            fill: {
+              colors: ['#f8f8f8', '#fff']
+            }
+          }
+        }
+      },
+      colors: series2.map(s => s.color),
+      markers: {
+        size: 3,
+        colors: ['#fff'],
+        strokeColor: series2.map(s => s.color),
+        strokeWidth: 2,
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return val
+          }
+        }
+      },
+      xaxis: {
+        categories: metrics
+      },
+      yaxis: {
+        labels: {
+          formatter: function (val, i) {
+            if (i % 2 === 0) {
+              return val
+            } else {
+              return ''
+            }
+          }
+        }
+      }
+    },
+
+
+  });
+
+
   return (
     <Box
       sx={{
@@ -28,7 +141,7 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
         mx: "auto",           // center horizontally
       }}
     >
-      <RadarChart
+      {/* <RadarChart
         height={500}
         margin={{
           left: 120,
@@ -64,7 +177,8 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
           labelOrientation="horizontal"
           angle="360"
         />
-      </RadarChart>
+      </RadarChart> */}
+      <Chart options={state.options} series={state.series} type="radar" height={state.height} />
     </Box>
   );
 }

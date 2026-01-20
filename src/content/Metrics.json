@@ -1,11 +1,11 @@
 {
      "Metrics": [
-             "การมองเห็น\n(Sight)",
-             "การได้ยิน\n(Auditory)",
-             "รับกลิ่นและรสชาติ\n(Olfactory\nand Gustation)",
-             "ระบบประสาทด้านการรับสัมผัส\n(Touch System)",
-             "การทรงตัว\n(Vestibular)",
-             "ความรู้สึก\n(Proprioceptive)"
+             "Sight",
+             "Auditory",
+             "Olfactory\nand Gustation",
+             "Touch",
+             "Vestibular",
+             "Proprioceptive"
      ],
       "Metricskey": [
              "sight_system",

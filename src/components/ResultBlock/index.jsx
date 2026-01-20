@@ -90,8 +90,6 @@ const ResultBlock = ({ survey, STORAGE_KEY }) => {
     result[ system.id] =  assessmentResult;
 
   });
-  console.log( result);
-console.log( Metrics.Metricskey);
   const getOrderedData = (result, metricsKey, type) =>
   metricsKey.map((systemId) => {
     const system = result?.[systemId];
@@ -119,6 +117,22 @@ console.log( Metrics.Metricskey);
     </ContentSection>
   );
 }
+
+  const columns = (systemId, childId, scaleReversed) => [
+    {
+      title: "Preferences",
+      dataIndex: "Preferences",
+      key: "Preferences",
+      width: 60,
+    },
+    {
+      title: "Arousals",
+      dataIndex: "Arousals",
+      key: "Arousals",
+    },
+
+  ];
+
 
   return (
     <ContentSection>

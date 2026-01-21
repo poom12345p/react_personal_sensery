@@ -1,18 +1,28 @@
 {
-     "Metrics": [
-             "Sight",
-             "Auditory",
-             "Olfactory\nand Gustation",
-             "Touch",
-             "Vestibular",
-             "Proprioceptive"
-     ],
-      "Metricskey": [
-             "sight_system",
-             "auditory_system",
-             "olfactory_gustation_system",
-             "touch_system",
-             "vestibular_system",
-             "proprioceptive_system"
-     ]
+  "Metrics": [
+    {
+      "key": "sight_system",
+      "label": "Sight"
+    },
+    {
+      "key": "auditory_system",
+      "label": "Auditory"
+    },
+    {
+      "key": "olfactory_gustation_system",
+      "label": "Olfactory\n& Gustation"
+    },
+    {
+      "key": "touch_system",
+      "label": "Touch"
+    },
+    {
+      "key": "vestibular_system",
+      "label": "Vestibular"
+    },
+    {
+      "key": "proprioceptive_system",
+      "label": "Proprioceptive"
+    }
+  ]
 }

@@ -40,6 +40,9 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
         height: 500,
         type: 'radar',
       },
+      grid: {
+    padding: { left: 40, right: 40 },
+  },
       responsive: [
         {
           breakpoint: 768, // tablet
@@ -52,10 +55,21 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
                 size: 110,
               },
             },
+              grid: {
+    padding: {
+      left: 80,
+      right: 80,
+      top: 40,
+      bottom: 40,
+    }},
             xaxis: {
               labels: {
                 style: {
-                  fontSize: "12px",
+                  style: {
+        fontSize: "10px",
+        fontWeight: 600,
+        whiteSpace: "pre-line",
+      }
                 },
               },
             },
@@ -65,13 +79,17 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
           breakpoint: 480, // mobile
           options: {
             chart: {
-              height: 200,
+              height: 300,
             },
             plotOptions: {
               radar: {
                 size: 90,
               },
             },
+            legend: {
+          position: "bottom",
+          offsetY: 5,
+        },
             xaxis: {
               labels: {
                 style: {

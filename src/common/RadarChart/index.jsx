@@ -40,9 +40,20 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
         height: 500,
         type: 'radar',
       },
+      plotOptions: {
+        radar: {
+          size: 200,
+          scale: {
+            min: 0,
+            max: 100,     // ✅ THIS is the correct place
+            stepSize: 20, // optional
+          }
+        },
+      },
+      labels: metrics,
       grid: {
-    padding: { left: 40, right: 40 },
-  },
+        padding: { left: 40, right: 40 },
+      },
       responsive: [
         {
           breakpoint: 768, // tablet
@@ -55,21 +66,22 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
                 size: 110,
               },
             },
-              grid: {
-    padding: {
-      left: 80,
-      right: 80,
-      top: 40,
-      bottom: 40,
-    }},
+            grid: {
+              padding: {
+                left: 80,
+                right: 80,
+                top: 40,
+                bottom: 40,
+              }
+            },
             xaxis: {
               labels: {
                 style: {
                   style: {
-        fontSize: "10px",
-        fontWeight: 600,
-        whiteSpace: "pre-line",
-      }
+                    fontSize: "10px",
+                    fontWeight: 600,
+                    whiteSpace: "pre-line",
+                  }
                 },
               },
             },
@@ -83,22 +95,24 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
             },
             plotOptions: {
               radar: {
-                size: 90,
+                size: 100,
               },
             },
             legend: {
-          position: "bottom",
-          offsetY: 5,
-        },
+              position: "bottom",
+              offsetY: 5,
+            },
             xaxis: {
               labels: {
                 style: {
-                  fontSize: "10px",
+                  fontSize: "7px",
                 },
               },
             },
-            dataLabels: {
-              enabled: false, // 👈 mobile clarity
+            dataLabels: { 
+                style: {
+                  fontSize: "7px",
+                },
             },
           },
         },
@@ -106,17 +120,7 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
       dataLabels: {
         enabled: true
       },
-      plotOptions: {
-        radar: {
-          size: 200,
-          polygons: {
-            strokeColors: '#e9e9e9',
-            fill: {
-              colors: ['#f8f8f8', '#fff']
-            }
-          }
-        }
-      },
+
       colors: series2.map(s => s.color),
       markers: {
         size: 3,
@@ -135,6 +139,10 @@ export default function MultiSeriesRadar({ dataSeries, metrics }) {
         categories: metrics
       },
       yaxis: {
+        show: true,
+        min: 0,
+        max: 100,
+         stepSize:20,
         labels: {
           formatter: function (val, i) {
             if (i % 2 === 0) {

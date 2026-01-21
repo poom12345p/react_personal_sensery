@@ -5,6 +5,7 @@ import { Button } from "../../common/Button";
 import { Fade } from "react-awesome-reveal";
 import MultiSeriesRadar from "../../common/RadarChart"
 import Metrics from "../../content/Metrics.json"
+import Choics from "../../content/Choices.json"
 const { Title, Text } = Typography;
 import {
   ContentSection,
@@ -82,12 +83,12 @@ const ResultBlock = ({ survey, STORAGE_KEY }) => {
 
       system.children.forEach((child) => {
         let childScore = 0;
-        const childMax = child.questions.length * 4;
+        const childMax = child.questions.length * Choics.max;
 
         child.questions.forEach((q) => {
           const value =
             ans?.[system.id]?.[child.id]?.[q.id] ?? 0;
-          childScore += value - 1;
+          childScore += value;
         });
 
         assessmentResult[child.id] = {
@@ -188,9 +189,8 @@ const columns = [
   return (
     <ContentSection>
       <Fade triggerOnce>
-        <HeadderTitle>{survey.title}</HeadderTitle>
-        <p className="text-gray-600 mb-8">Target age: {survey.targetAge}</p>
-        <MultiSeriesRadar dataSeries={graphSeries} metrics={Metrics.Metrics} />
+        <p className="text-gray-600 mb-8">{survey.targetAge}</p>
+        <MultiSeriesRadar dataSeries={graphSeries} metrics={Metrics.Metrics.map((m)=>m.label)} />
 
         {/* <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>

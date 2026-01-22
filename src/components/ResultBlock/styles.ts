@@ -53,7 +53,6 @@ export const MainTitle = styled("h2")`
   font-size: clamp(24px, 4vw, 30px); 
   line-height: 1.2;
   padding: 0.5rem 0;
-  margin-top: 2rem;
   text-transform: uppercase;
   color: #17007e;
   font-family: "Motiva Sans Light", sans-serif;

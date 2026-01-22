@@ -166,7 +166,7 @@ const AssessmentBlock = ({ survey }) => {
   return (
     <ContentSection>
       <Fade triggerOnce>
-        <HeadderTitle>{survey.title}</HeadderTitle>
+        <HeadderTitle>{"แบบประเมินความต้องการรับรู้ประสาทสัมผัส"}</HeadderTitle>
         <p className="text-gray-600 mb-8">Target age: {survey.targetAge}</p>
 
 
@@ -178,7 +178,6 @@ const AssessmentBlock = ({ survey }) => {
 
                 return (
                   <div key={child.id} className="mb-8">
-                    <SubTitle>{child.title}</SubTitle>
 
                     {child.questions.map((q) => {
 

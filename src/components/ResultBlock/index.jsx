@@ -189,7 +189,7 @@ const columns = [
   return (
     <ContentSection>
       <Fade triggerOnce>
-        <p className="text-gray-600 mb-8">{survey.targetAge}</p>
+        <MainTitle> {survey.resulttitle}</MainTitle>
         <MultiSeriesRadar dataSeries={graphSeries} metrics={Metrics.Metrics.map((m)=>m.label)} />
 
         {/* <Row gutter={[16, 16]}>

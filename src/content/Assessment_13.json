@@ -2,6 +2,7 @@
     "survey": {
         "id": "assessment_13",
         "title": "แบบประเมินความต้องการรับรู้ประสาทสัมผัส",
+        "resulttitle": "ผมการประเมินวัยรุ่นและผู้ใหญ่",
         "targetAge": "13+ ปี",
         "Assessment": [
             {

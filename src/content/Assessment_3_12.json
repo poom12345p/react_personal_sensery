@@ -2,6 +2,7 @@
     "survey": {
         "id": "assessment_3_12",
         "title": "แบบประเมินความต้องการรับรู้ประสาทสัมผัส",
+         "resulttitle": "ผลการประเมินช่วงอายุ 3-12 ปี",
         "targetAge": "3-12 ปี",
         "Assessment": [
             {
@@ -233,7 +234,7 @@
                 "title": "ระบบประสาทด้านการรับสัมผัส (Touch System)",
                 "children": [
                     {
-                        "id": "touch_preferences",
+                        "id": "preferences",
                         "title": "ระดับความชอบด้านการสัมผัส (Touch Preferences)",
                         "questions": [
                             {
@@ -264,7 +265,7 @@
                         ]
                     },
                     {
-                        "id": "touch_arousals",
+                        "id": "arousals",
                         "title": "ระดับการตื่นตัวต่อสิ่งเร้าด้านการสัมผัส (Touch Arousals)",
                         "questions": [
                             {

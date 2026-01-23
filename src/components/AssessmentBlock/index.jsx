@@ -46,7 +46,6 @@ const LikertRadio = ({ value, scaleReversed, onChange }) => (
 // }
 
 const QuestionRow = ({ question, savedData, scaleReversed, onChange }) => {
-  console.log(savedData);
   return (
     <Card id={question.id} style={{ marginBottom: 16 }}>
       <Typography.Text strong>

@@ -6,6 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import MultiSeriesRadar from "../../common/RadarChart"
 import Metrics from "../../content/Metrics.json"
 import Choics from "../../content/Choices.json"
+import Critirion from "../../content/Critirion.json"
 const { Title, Text } = Typography;
 import {
   ContentSection,
@@ -72,8 +73,24 @@ const ResultBlock = ({ survey, STORAGE_KEY }) => {
       .sort((a, b) => b.data - a.data); // 🔥 most → least
   };
 
+  const calcriterion = (data)=>
+  {
+    if(data < 25)
+    {
+      return "low"
+    }
+    else if(data >= 25 && data<75)
+    {
+      return "mid"
+    }
+    else
+    {
+      return "high"
+    }
+  }
+
   const getScoreResult = (ans) => {
-    console.log("ans", ans);
+
     if (!Object.keys(ans).length) return {};
 
     let result = {};
@@ -91,11 +108,14 @@ const ResultBlock = ({ survey, STORAGE_KEY }) => {
           childScore += value;
         });
 
+        const percent=Math.round((childScore / childMax) * 100);
+
         assessmentResult[child.id] = {
           label: child.id,
           score: childScore,
           maxScore: childMax,
-          data: Math.round((childScore / childMax) * 100),
+          data:  percent,
+          critirion: calcriterion( percent)
         };
       });
 
@@ -114,8 +134,13 @@ const ResultBlock = ({ survey, STORAGE_KEY }) => {
   const tableData = Metrics.Metrics.map((m) => ({
     key: m.key,
     system: m.label,
-    preferences: result?.[m.key]?.preferences?.data ?? 0,
-    arousals: result?.[m.key]?.arousals?.data ?? 0,
+    preferences: { value : result?.[m.key]?.preferences?.data ?? 0,
+      critirion : result?.[m.key]?.preferences?.critirion ??""
+    },
+    arousals: { value : result?.[m.key]?.arousals?.data ?? 0,
+       critirion : result?.[m.key]?.arousals?.critirion ??""
+    },
+    result : Critirion?.[ result?.[m.key]?.arousals?.critirion]?.[result?.[m.key]?.preferences?.critirion] ?? ""
   }));
   
       setResult(tableData);
@@ -136,6 +161,7 @@ console.log(Object.entries(result))
       ([systemId, systemData]) => ({
         label: metricMap[systemId] ?? systemId,
         data: systemData?.preferences?.data ?? 0,
+        critirion:  systemData?.preferences?.critirion?? "0"
       })
     );
 
@@ -143,6 +169,7 @@ console.log(Object.entries(result))
       ([systemId, systemData]) => ({
         label: metricMap[systemId] ?? systemId,
         data: systemData?.arousals?.data ?? 0,
+        critirion:  systemData?.preferences?.critirion?? "0"
       })
     );
     prefRankingData = buildSortedList(prefRankingData);
@@ -169,20 +196,28 @@ const columns = [
     dataIndex: "system",
     key: "system",
     fixed: "left",
+
   },
   {
     title: "Preferences",
     dataIndex: "preferences",
     key: "preferences",
-    render: (value) => `${value}%`,
-    sorter: (a, b) => a.preferences - b.preferences,
+    render: (value) =>  `${value.value}% - ${value.critirion}`,
+    sorter: (a, b) => a.preferences.value - b.preferences.value,
   },
   {
     title: "Arousals",
     dataIndex: "arousals",
     key: "arousals",
-    render: (value) => `${value}%`,
-    sorter: (a, b) => a.arousals - b.arousals,
+    render: (value) => `${value.value}% - ${value.critirion}`,
+    sorter: (a, b) => a.arousals.value - b.arousals.value,
+  },
+   {
+    title: "Result",
+    dataIndex: "result",
+    key: "result",
+    responsive: ['xs', 'sm', 'md', 'lg'],
+    render: (value) => `${value}`,
   },
 ];
 
@@ -240,7 +275,7 @@ const columns = [
   pagination={false}
   bordered
   size="small"
-  scroll={{ x: 500 }}
+  scroll={{ x: 400 }}
 />
 
         <ButtonWrapper>

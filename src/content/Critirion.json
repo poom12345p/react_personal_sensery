@@ -1,0 +1,15 @@
+{
+    "low": {
+        "low": "Bystander",
+        "mid": "World Weury",
+        "high": "Seeker"
+    },
+    "mid": {
+        "low": "Worrier",
+        "mid": "Mediator",
+        "high": "Self-discipline"
+    },
+    "high": {"low": "Avoider",
+        "mid": "Sensor",
+        "high": "Solitude"}
+}

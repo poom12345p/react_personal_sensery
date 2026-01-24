@@ -202,14 +202,14 @@ const columns = [
     title: "Preferences",
     dataIndex: "preferences",
     key: "preferences",
-    render: (value) =>  `${value.value}% - ${value.critirion}`,
+    render: (value) =>  `${value.value}%`,
     sorter: (a, b) => a.preferences.value - b.preferences.value,
   },
   {
     title: "Arousals",
     dataIndex: "arousals",
     key: "arousals",
-    render: (value) => `${value.value}% - ${value.critirion}`,
+    render: (value) => `${value.value}%`,
     sorter: (a, b) => a.arousals.value - b.arousals.value,
   },
    {
